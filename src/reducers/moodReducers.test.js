@@ -1,4 +1,4 @@
-import {drinkCoffee, eatSnack, takeNap, study } from '../actions/moodActions.js';
+import { drinkCoffee, eatSnack, takeNap, study } from '../actions/moodActions.js';
 import moodReducer from './moodReducers.js';
 
 
@@ -7,7 +7,7 @@ describe('mood reducer tests', () => {
     const action = drinkCoffee();
     const initialState = { coffees: 0 };
     const newState = moodReducer(initialState, action);
-    expect(newState).toEqual([{ coffees: 1 }]);
+    expect(newState).toEqual({ coffees: 1 });
 
     newState.snacks = 2;
     const secondState = moodReducer(newState, action);
