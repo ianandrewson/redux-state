@@ -1,6 +1,10 @@
 import { DRINK_COFFEE, EAT_SNACK, TAKE_NAP, STUDY } from '../actions/moodActions.js';
 
-export default function moodReducer(state = {}, action) {
+export default function moodReducer(state = {
+  coffees: 0,
+  snacks: 0,
+  naps: 0,
+  studies: 0 }, action) {
   switch(action.type) {
     case DRINK_COFFEE: 
       return { ...state, coffees: state.coffees + 1 };
