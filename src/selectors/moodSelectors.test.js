@@ -6,7 +6,7 @@ describe('mood selector tests', () => {
     expect(isTired(state)).toBeFalsy();
 
     state.coffees = 0;
-    state.naps = 1;
+    state.naps = 0;
     expect(isTired(state)).toBeTruthy();
   });
 
@@ -14,8 +14,8 @@ describe('mood selector tests', () => {
     const state = {};
     expect(isHyper(state)).toBeFalsy();
 
-    state.coffees = 3;
-    expect(isHyper(state)).toByTruthy();
+    state.coffees = 4;
+    expect(isHyper(state)).toBeTruthy();
   });
 
   it('isEducated if studies > 2', () => {
@@ -35,7 +35,7 @@ describe('mood selector tests', () => {
   });
 
   it('returns a censored face if tired and hungry', () => {
-    const state = { coffee: 0, naps: 0, studies: 0, snacks: 0 };
+    const state = { coffees: 0, naps: 0, studies: 0, snacks: 0 };
     expect(getFace(state)).toEqual('🤬');
   });
 
@@ -45,7 +45,7 @@ describe('mood selector tests', () => {
   });
 
   it('returns a sleepy face if tired', () => {
-    const state = { snacks: 1, naps: 1 };
+    const state = { snacks: 2, naps: 0, coffees: 0 };
     expect(getFace(state)).toEqual('😴');
   });
 
