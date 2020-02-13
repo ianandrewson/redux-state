@@ -2,8 +2,13 @@ import React from 'react';
 import { render } from 'react-dom';
 import App from './components/App';
 import './reset.css';
+import store from './store.js';
+import { Provider } from 'react-redux';
+
 
 render(
-  <App />,
+  <Provider store={store}>
+    <App />
+  </Provider>,
   document.getElementById('root')
 );
