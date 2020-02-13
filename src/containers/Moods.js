@@ -4,8 +4,6 @@ import Face from '../components/face/Face';
 import { useDispatch, useSelector } from 'react-redux';
 import { drinkCoffee, eatSnack, takeNap, study } from '../actions/moodActions.js';
 
-// const state = useSelector(state => state);
-
 // export const isTired = state => state.coffees < 1 && state.naps < 1;
 // export const isHyper = state => state.coffees > 3;
 // export const isEducated = state => state.studies > 2;
@@ -36,10 +34,6 @@ export default function Moods() {
   return (
     <>
       <div className={styles.Controls}>
-        {/* <button onClick={() => this.handleSelection({ type: 'DRINK_COFFEE' })}>coffee - {coffees}</button>
-        <button onClick={() => this.handleSelection({ type: 'EAT_SNACK' })}>snacks - {snacks}</button>
-        <button onClick={() => this.handleSelection({ type: 'TAKE_NAP' })}>naps - {naps}</button>
-        <button onClick={() => this.handleSelection({ type: 'STUDY' })}>studies - {studies}</button> */}
         <button onClick={handleCoffee}>coffee - {state.coffees}</button>
         <button onClick={handleSnack}>snack - {state.snacks}</button>
         <button onClick={handleNap}>nap - {state.naps}</button>
