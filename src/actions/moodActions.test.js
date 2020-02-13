@@ -1,3 +1,5 @@
+import { drinkCoffee, eatSnack, takeNap, study } from './moodActions.js';
+
 describe('mood action tests', () => {
   it('can create DRINK_COFFEE action', () => {
     const action = drinkCoffee();
